@@ -45,7 +45,7 @@ install_jq() {
 
 install_sfdx_plugins() {
   log "Installing O2E Plugins ..."
-  sfdx plugins:install git://github.com/SteffyO2E/steffy-sfdx-plugin  
+  echo "y" | sfdx plugins:install git://github.com/SteffyO2E/steffy-sfdx-plugin  
 }
 
 setup_dirs() {
