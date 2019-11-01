@@ -43,6 +43,16 @@ install_jq() {
   chmod +x jq
 }
 
+install_sfdx_plugins() {
+  log "Downloading Salesforce CLI Plugins ..."
+  mkdir -p "$BUILD_DIR/vendor/sfdx/plugins"
+  cd "$BUILD_DIR/vendor/sfdx/plugins"
+  log "Cloning O2E SFDX Plugins ..."
+  git clone https://github.com/SteffyO2E/steffy-sfdx-plugin
+  cd "steffy-sfdx-plugin"
+  sfdx plugins:link  
+}
+
 setup_dirs() {
   export PATH="$BUILD_DIR/vendor/sfdx/cli/bin:$PATH"
   export PATH="$BUILD_DIR/vendor/sfdx/jq:$PATH"
@@ -65,6 +75,9 @@ install_sfdx_cli
 
 log "Starting jq installation ..."
 install_jq
+
+log "Starting CLI Plugins installation ..."
+install_sfdx_plugins
 
 # Create .profile.d folder
 mkdir -p $BUILD_DIR/.profile.d
