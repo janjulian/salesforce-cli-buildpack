@@ -48,7 +48,7 @@ install_sfdx_plugins() {
   mkdir -p "$BUILD_DIR/vendor/sfdx/plugins"
   cd "$BUILD_DIR/vendor/sfdx/plugins"
   log "Cloning O2E SFDX Plugins ..."
-  git clone https://github.com/SteffyO2E/steffy-sfdx-plugin
+  git clone git://github.com/SteffyO2E/steffy-sfdx-plugin
   cd "steffy-sfdx-plugin"
   sfdx plugins:link  
 }
