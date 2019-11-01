@@ -51,8 +51,8 @@ install_sfdx_plugins() {
   mkdir -p "$BUILD_DIR/vendor/sfdx/plugins/steffy-sfdx-plugin" 
   git clone git://github.com/SteffyO2E/steffy-sfdx-plugin "$BUILD_DIR/vendor/sfdx/plugins/steffy-sfdx-plugin" && cd "$BUILD_DIR/vendor/sfdx/plugins/steffy-sfdx-plugin"
   sleep 10s
-  log "Current directory"
   pwd
+  sfdx commands
   sfdx plugins:link  
 }
 
